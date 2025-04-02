@@ -1,69 +1,148 @@
-@import url('https://fonts.googleapis.com/css2?family=Ghastly+Panic&display=swap');
-
+/* Darker Background with Rain Effect */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(to right, black, white);
-    text-align: center;
-}
-
-h1 {
-    font-family: 'Ghastly Panic', sans-serif;
-    font-size: 3rem;
-    color: red;
-    text-shadow: 4px 4px 15px black;
-    margin-bottom: 20px;
-    animation: glitch 1s infinite alternate;
-}
-
-@keyframes glitch {
-    0% { text-shadow: 2px 2px 10px red; }
-    100% { text-shadow: -2px -2px 10px black; }
-}
-
-.language-section {
-    margin: 20px 0;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
-    width: 80%;
-    max-width: 500px;
-}
-
-.language-title {
-    font-family: 'Ghastly Panic', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a001f); /* Darker gradient */
     color: white;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 5px red;
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+/* Rain Effect */
+@keyframes rain {
+    0% { top: -10%; }
+    100% { top: 100%; }
+}
+
+.rain {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    animation: rain 0.5s linear infinite;
+    opacity: 0.5;
+}
+
+.rain:nth-child(odd) {
+    animation-duration: 0.7s;
+    left: 10%;
+}
+
+.rain:nth-child(even) {
+    animation-duration: 0.8s;
+    left: 30%;
+}
+
+.rain:nth-child(3n) {
+    animation-duration: 1s;
+    left: 50%;
+}
+
+/* Fancy Password Input - No Button Look */
+#password-input {
+    background: linear-gradient(145deg, #3b0a45, #ff006e); /* Gradient background */
+    border: 2px solid transparent;
+    outline: none;
+    color: white;
+    font-size: 22px;
+    text-align: center;
+    width: 250px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #9d00ff;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    background-clip: border-box;
+}
+
+/* Password Input Focus Effect */
+#password-input:focus {
+    box-shadow: 0 0 15px #ff006e;
+    transform: scale(1.05);
+}
+
+/* Invisible Submit Button (Triggers via Enter) */
+#submit-key {
+    display: none; /* Hide button entirely */
+}
+
+/* Left and Right Section Layout */
+.language-section {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 50px;
+    gap: 40px; /* Add more separation between buttons */
+}
+
+/* Separate Options */
+.language-title {
+    margin-bottom: 25px;
+    text-align: left;
+    width: 45%;
+    font-family: 'Creepster', cursive; /* Apply horror font */
+    font-size: 28px;
+    letter-spacing: 1px;
 }
 
 .invite-button {
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    font-family: 'Ghastly Panic', sans-serif;
-    background: red;
+    margin-bottom: 25px;
+    text-align: right;
+    width: 45%;
+    font-family: 'Creepster', cursive; /* Apply horror font */
+    font-size: 28px;
+    letter-spacing: 1px;
+    text-decoration: none;
     color: white;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: text-shadow 0.3s ease-in-out;
 }
 
 .invite-button:hover {
-    background: white;
-    color: black;
-    transform: scale(1.05);
-    box-shadow: 0px 0px 15px red;
+    text-shadow: 0 0 15px #9d00ff;
 }
+
+/* Flicker Effect on Hover */
+.language-title:hover {
+    text-shadow: 0 0 12px #9d00ff, 0 0 25px #6e00b3;
+    animation: flicker 1s infinite alternate;
+}
+
+.invite-button:hover {
+    text-shadow: 0 0 12px #9d00ff, 0 0 25px #6e00b3;
+    animation: flicker 1s infinite alternate;
+}
+
+/* Extra spacing */
+.language-section div {
+    margin-top: 20px;
+}
+
+/* Hide Main Content Until Password is Entered */
+#main-content {
+    display: none;
+}
+
+/* More darkness */
+body {
+    background: #121212;
+}
+
+/* Rain effect creation */
+@keyframes rain {
+    0% { top: -100%; }
+    100% { top: 100%; }
+}
+
+/* Import Horror Font */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
