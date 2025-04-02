@@ -12,7 +12,7 @@ window.onload = function() {
     }
 
     submitButton.addEventListener("click", function() {
-        if (passwordInput.value === "cartiwontdrop") {
+        if (passwordInput.value === "skibibi boilet") {
             passwordScreen.style.display = "none";
             mainContent.style.display = "block";
             playAudio();
