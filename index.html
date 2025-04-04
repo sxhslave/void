@@ -8,26 +8,32 @@
 </head>
 <body>
 
+    <!-- Password Screen -->
     <div id="password-screen">
-        <h2>Enter the Key</h2>
-        <input type="password" id="password-input" placeholder="">
+        <h2>Enter Access Key</h2>
+        <input type="password" id="password-input" placeholder="Enter key..." autocomplete="off">
         <button id="submit-key">Submit</button>
+        <p id="access-status"></p> <!-- Displays Viewer/Owner Mode -->
     </div>
 
+    <!-- Main Content (Hidden until login) -->
     <div id="main-content" style="display: none;">
         <h1>Void Taxi</h1>
 
+        <!-- Background Music -->
         <audio id="bg-music" loop>
             <source src="song.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
 
+        <!-- TR Info Services -->
         <div class="language-section">
             <div class="language-title">TR telno bombalama - info verme servisleri (TTBIBS)</div>
             <button class="invite-button" onclick="window.open('https://discord.gg/kWP5NWSrRD', '_blank')">prime.services</button>
             <button class="invite-button" onclick="window.open('https://discord.gg/blank', '_blank')">prime services den klan olustur! (dm uzhuzi)</button>
         </div>
 
+        <!-- Illegal Hangouts -->
         <div class="language-section">
             <div class="language-title">illegal hangouts</div>
             <button class="invite-button" onclick="window.open('https://discord.gg/c31k', '_blank')">c7k</button>
@@ -36,12 +42,16 @@
             <button class="invite-button" onclick="window.open('https://discord.gg/atl', '_blank')">/atl</button>
         </div>
 
+        <!-- Miscellaneous -->
         <div class="language-section">
             <div class="language-title">misc. non turkish</div>
             <button class="invite-button" onclick="window.open('https://discord.gg/spit', '_blank')">/spit</button>
             <button class="invite-button" onclick="window.open('https://discord.gg/felony', '_blank')">/hail</button>
         </div>
     </div>
+
+    <!-- Rain Effect -->
+    <div id="rain-container"></div>
 
     <script src="script.js"></script>
 </body>
