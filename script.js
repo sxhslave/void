@@ -12,7 +12,7 @@ window.onload = function() {
     }
 
     submitButton.addEventListener("click", function() {
-        if (passwordInput.value === "a◡╯R◜┓a╃▾╰║└t$┸┮╒│┇◸0z╽◍▼▖┥◔►◒┄^") {
+        if (passwordInput.value === "dehsetpurna" {
             passwordScreen.style.display = "none";
             mainContent.style.display = "block";
             playAudio();
