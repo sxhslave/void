@@ -12,7 +12,7 @@ window.onload = function() {
     }
 
     submitButton.addEventListener("click", function() {
-        if (passwordInput.value === "dehsetpurna" {
+        if (passwordInput.value === "dehsetpurna") {  // Fixed missing parenthesis
             passwordScreen.style.display = "none";
             mainContent.style.display = "block";
             playAudio();
